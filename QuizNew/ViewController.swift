@@ -9,6 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // set the label initial alpha
+        questionLabel.alpha = 0
+    }
 
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerLabel: UILabel!
@@ -30,12 +37,22 @@ class ViewController: UIViewController {
         let question: String = questions[currentQuestionIndex]
         questionLabel.text = question
         answerLabel.text = "???"
+        
+        animateLabelTransitions()
     }
     
     @IBAction func showAnswer(sender: AnyObject){
         let answer: String = answers[currentQuestionIndex]
         answerLabel.text = answer
         
+    }
+    
+    func animateLabelTransitions(){
+        
+        // animate the alpha
+        UIView.animateWithDuration(0.5, animations: {
+            self.questionLabel.alpha = 1
+            })
     }
     
     override func viewDidLoad() {
