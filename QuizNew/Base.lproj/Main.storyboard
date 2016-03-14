@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pp-EF-vGZ">
-                                <rect key="frame" x="288" y="28" width="25" height="21"/>
+                                <rect key="frame" x="288" y="28" width="25" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9R0-U7-dBI">
-                                <rect key="frame" x="251" y="63" width="98" height="30"/>
+                                <rect key="frame" x="251" y="62" width="98" height="30"/>
                                 <state key="normal" title="Next Question"/>
                                 <connections>
                                     <action selector="showNextQuestion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zUZ-ba-HW7"/>
@@ -37,8 +37,14 @@
                                     <action selector="showAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9f7-yR-xUa"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2M-z2-9m9">
+                                <rect key="frame" x="287.5" y="28" width="25" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJl-Ct-HQf">
-                                <rect key="frame" x="288" y="270" width="25" height="21"/>
+                                <rect key="frame" x="288" y="269" width="25" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,17 +54,22 @@
                         <constraints>
                             <constraint firstItem="aDa-Cr-6JG" firstAttribute="centerX" secondItem="9R0-U7-dBI" secondAttribute="centerX" id="6uL-l2-ge3"/>
                             <constraint firstItem="4pp-EF-vGZ" firstAttribute="centerX" secondItem="9R0-U7-dBI" secondAttribute="centerX" id="8Gr-e0-utb"/>
-                            <constraint firstItem="4pp-EF-vGZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CLn-mj-nNj"/>
                             <constraint firstItem="qJl-Ct-HQf" firstAttribute="top" secondItem="9R0-U7-dBI" secondAttribute="bottom" constant="177" id="CUz-D9-DPn"/>
+                            <constraint firstItem="9R0-U7-dBI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NVD-1d-Jex"/>
                             <constraint firstItem="4pp-EF-vGZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="OQC-fl-WPU"/>
                             <constraint firstItem="9R0-U7-dBI" firstAttribute="top" secondItem="4pp-EF-vGZ" secondAttribute="bottom" constant="14" id="YoB-nq-upy"/>
                             <constraint firstItem="aDa-Cr-6JG" firstAttribute="top" secondItem="qJl-Ct-HQf" secondAttribute="bottom" constant="8" id="iyw-qG-7mO"/>
                             <constraint firstItem="qJl-Ct-HQf" firstAttribute="centerX" secondItem="9R0-U7-dBI" secondAttribute="centerX" id="mhs-WF-hjE"/>
+                            <constraint firstItem="M2M-z2-9m9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o8a-or-CqQ"/>
+                            <constraint firstItem="M2M-z2-9m9" firstAttribute="top" secondItem="4pp-EF-vGZ" secondAttribute="top" id="ogy-d1-klm"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="answerLabel" destination="qJl-Ct-HQf" id="CTD-Vt-itu"/>
-                        <outlet property="questionLabel" destination="4pp-EF-vGZ" id="VD5-Gw-A7H"/>
+                        <outlet property="currentQuestionLabel" destination="4pp-EF-vGZ" id="9Uq-3B-vtS"/>
+                        <outlet property="currentQuestionLabelCenterXConstraint" destination="8Gr-e0-utb" id="2T1-3v-OUk"/>
+                        <outlet property="nextQuestionLabel" destination="M2M-z2-9m9" id="9Wj-0a-o6P"/>
+                        <outlet property="nextQuestionLabelCenterXConstraint" destination="o8a-or-CqQ" id="Gh5-Cx-o8G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
